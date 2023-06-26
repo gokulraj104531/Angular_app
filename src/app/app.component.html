@@ -1,7 +1,53 @@
+<div class="container col-mt-3">
+  <div class="card">
+    <div class="card-header">
+      <h3>User Registration</h3>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="Userformgroup" (ngSubmit)="onsubmit()" >
+        <div class="row">
+          <div class="col-sm-6">
+            <label>Username</label>
+            <input type="text" formControlName="userName" class="form-control"/>
+          </div>
+          <div class="col-sm-6">
+            <label>Name</label>
+            <input type="text" formControlName="name" class="form-control"/>
+          </div>
+          <div class="col-sm-6">
+            <label>Email</label>
+            <input type="text" formControlName="email" class="form-control"/>
+          </div>   
+          <div class="col-sm-6">
+            <label>Password</label>
+            <input type="text" formControlName="password" class="form-control"/>
+          </div>
+          <div class="col-sm-6">
+            <label>CreatedDate</label>
+            <input type="date" formControlName="createdDate" class="form-control"/>
+          </div>
+          <div class="col-sm-6">
+            <label>Address</label>
+            <input type="text" formControlName="address" class="form-control"/>
+          </div>
+          <div class="col-sm-6">
+            <label>PhoneNumber</label>
+            <input type="text" formControlName="phoneNumber" class="form-control"/>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <br>
+            <button class="btn btn-primary" type="Submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <div class="container mt-5">
   <div class="card">
     <div class="card-header">
-      <h1>Users</h1>
+      <h3>Users</h3>
     </div>
     <div class="card-body">
       <div class="row">
@@ -17,6 +63,7 @@
                 <th>CreatedDate</th>
                 <th>Address</th>
                 <th>PhoneNumber</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -29,6 +76,10 @@
                 <td>{{user.createdDate}}</td>
                 <td>{{user.address}}</td>
                 <td>{{user.phoneNumber}}</td>
+                <td>
+                   <button (click)="Fillform(user)" class="btn btn-link">Edit</button>
+                   <button (click)="DeleteUser(user.id)" class="btn btn-link">Delete</button>
+                </td>
               </tr>
             </tbody>
           </table>

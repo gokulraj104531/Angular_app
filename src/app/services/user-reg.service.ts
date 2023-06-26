@@ -14,5 +14,16 @@ export class UserRegService {
     GetUser():Observable<UserRegistration[]>{
       return this.httpclient.get<UserRegistration[]>(this.baseurl+"GetUsers");
     }
-   
+   AddUser(user:UserRegistration):Observable<UserRegistration>{
+    user.id="0";
+    return this.httpclient.post<UserRegistration>(this.baseurl+"AddUser", user);
+   }
+
+   UpdateUser(user:UserRegistration):Observable<UserRegistration>{
+    return this.httpclient.put<UserRegistration>(this.baseurl +"EditUser", user);
+   }
+
+   DeleteUser(id:string):Observable<UserRegistration>{
+    return this.httpclient.delete<UserRegistration>(this.baseurl+"DeleteUser/"+id);
+   }
 }
