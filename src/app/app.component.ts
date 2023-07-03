@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { OnSameUrlNavigation } from '@angular/router';
 import { UserRegistration } from './Models/UserRegistration';
 import { UserRegService } from './services/user-reg.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup,Validator, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,10 @@ export class AppComponent implements OnInit{
   Userarray:UserRegistration[]=[];
   Userformgroup:FormGroup;
 
+  user1:object=[
+    {id:1,name:'Gokul'},
+    {id:2,name:'white'}
+  ]
 
   constructor(private userservice:UserRegService,private fb:FormBuilder){
     this.Userformgroup=this.fb.group({

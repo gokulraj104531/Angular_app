@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-sm-6">
             <label>Username</label>
-            <input type="text" formControlName="userName" class="form-control"/>
+            <input type="text" formControlName="userName" class="form-control"/> 
           </div>
           <div class="col-sm-6">
             <label>Name</label>
@@ -26,7 +26,7 @@
             <label>CreatedDate</label>
             <input type="date" formControlName="createdDate" class="form-control"/>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6" >
             <label>Address</label>
             <input type="text" formControlName="address" class="form-control"/>
           </div>
@@ -69,11 +69,11 @@
             <tbody>
               <tr *ngFor="let user of Userarray">
                 <td>{{user.id}}</td>
-                <td>{{user.userName}}</td>
-                <td>{{user.name}}</td>
+                <td>{{user.userName|lowercase}}</td>
+                <td>{{user.name|titlecase}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.password}}</td>
-                <td>{{user.createdDate}}</td>
+                <td>{{user.createdDate|date:'dd/MM/yyyy'}}</td>
                 <td>{{user.address}}</td>
                 <td>{{user.phoneNumber}}</td>
                 <td>
@@ -89,3 +89,5 @@
     </div>
   </div>
 </div>
+
+<app-parent [child]="user1"></app-parent>
