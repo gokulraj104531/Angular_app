@@ -14,10 +14,6 @@ export class AppComponent implements OnInit{
   Userarray:UserRegistration[]=[];
   Userformgroup:FormGroup;
 
-  user1:object=[
-    {id:1,name:'Gokul'},
-    {id:2,name:'white'}
-  ]
 
   constructor(private userservice:UserRegService,private fb:FormBuilder){
     this.Userformgroup=this.fb.group({

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class UserRegService {
 
   constructor(private httpclient:HttpClient) {}
-    baseurl="https://localhost:44330/";
+    baseurl="https://localhost:7161/";
 
     GetUser():Observable<UserRegistration[]>{
       return this.httpclient.get<UserRegistration[]>(this.baseurl+"api/User/GetUsers");
@@ -25,6 +25,5 @@ export class UserRegService {
 
    DeleteUser(id:string):Observable<UserRegistration>{
     return this.httpclient.delete<UserRegistration>(this.baseurl+"api/User/DeleteUser/"+id);
-   }
-   
+   }  
 }
